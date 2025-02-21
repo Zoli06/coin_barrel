@@ -12,11 +12,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
         home: Scaffold(
-          body: LoginForm(),
-          backgroundColor: background,
-        )
-    );
+      body: SafeArea(
+          child: Center(child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: 600),
+        child: LoginForm(),
+      ))),
+      backgroundColor: background,
+    ));
   }
 }
