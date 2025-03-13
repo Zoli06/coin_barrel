@@ -1,9 +1,12 @@
-import 'package:coin_barrel/colors.dart';
+import 'package:coin_barrel/widgets/my_text_field.dart';
+import 'package:coin_barrel/widgets/my_height.dart';
+import 'package:coin_barrel/widgets/my_gap.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 
 class LoginForm extends StatefulWidget {
+  static const elementsHeight = 56;
+
   const LoginForm({super.key});
 
   @override
@@ -14,7 +17,7 @@ class _LoginFormState extends State<LoginForm> {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
-  final borderRadius = BorderRadius.circular(12);
+  var _obscurePassword = true;
 
   @override
   void dispose() {
@@ -33,99 +36,51 @@ class _LoginFormState extends State<LoginForm> {
               Align(
                   alignment: Alignment.topCenter,
                   child: Text("Coin Barrel",
-                      style: TextStyle(
-                          fontFamily: "Pirata One",
-                          fontSize: 64,
-                          color: text))),
+                      style: Theme.of(context).textTheme.displayMedium)),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Welcome back",
-                      style: TextStyle(fontSize: 45, color: text)),
-                  SizedBox(height: 5),
-                  TextField(
+                      style: Theme.of(context).textTheme.headlineMedium),
+                  MyGap(),
+                  MyHeight(
+                      child: MyTextField(
+                    expandsVertically: true,
                     controller: usernameController,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(1000)),
-                      hintText: "Email address",
-                      hintStyle: TextStyle(color: outline),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: theme,
-                          ),
-                          borderRadius: BorderRadius.circular(1000)),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: outline,
-                          ),
-                          borderRadius: BorderRadius.circular(1000)),
+                    hintText: "Username",
+                  )),
+                  MyGap(),
+                  MyHeight(
+                    child: MyTextField(
+                      expandsVertically: true,
+                      controller: passwordController,
+                      hintText: "Password",
+                      obscureText: _obscurePassword,
+                      onToggleObscure: () {
+                        setState(() {
+                          _obscurePassword = !_obscurePassword;
+                        });
+                      },
+                      showToggleObscure: true,
                     ),
-                    style: TextStyle(color: text),
                   ),
-                  SizedBox(height: 20),
-                  TextField(
-                    controller: passwordController,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(1000)),
-                        hintText: "Password",
-                        hintStyle: TextStyle(color: outline),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: theme,
-                            ),
-                            borderRadius: BorderRadius.circular(1000)),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: outline,
-                            ),
-                            borderRadius: BorderRadius.circular(1000)),
-                        suffixIcon: IconButton(
-                            onPressed: () => {},
-                            icon: SvgPicture.asset("assets/eye.svg",
-                                width: 44,
-                                height: 30,
-                                colorFilter: ColorFilter.mode(
-                                    outline, BlendMode.srcIn)))),
-                    style: TextStyle(color: text),
-                  ),
-                  SizedBox(height: 20),
+                  MyGap(),
                   Row(
                     children: [
-                      SizedBox(
-                        //width: double.infinity,
-                        height: 55,
-                        width: 55,
-                        child: BackButton(
-                            onPressed: () => {},
-                            style: ElevatedButton.styleFrom(
-                                foregroundColor: background,
-                                shape: StadiumBorder(),
-                                backgroundColor: outline,
-                                textStyle: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                )),
-                            // child: const Text('Back')
-                          ),
-                      ),
-                      SizedBox(width: 15),
-                      Expanded(child:
-                      SizedBox(
-                        //width: double.infinity,
-                        height: 55,
-                        child: ElevatedButton(
-                            onPressed: () => {},
-                            style: ElevatedButton.styleFrom(
-                                foregroundColor: background,
-                                shape: StadiumBorder(),
-                                backgroundColor: theme,
-                                textStyle: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                )),
-                            child: const Text('Login')),
+                      MyHeight(
+                          child: AspectRatio(
+                              aspectRatio: 1,
+                              child: IconButton.filledTonal(
+                                icon: const Icon(Icons.arrow_back),
+                                onPressed: () => {},
+                              ))),
+                      MyGap(),
+                      Expanded(
+                          child: MyHeight(
+                        child: FilledButton(
+                          child: Text("Login"),
+                          onPressed: () => {},
+                        ),
                       ))
                     ],
                   )

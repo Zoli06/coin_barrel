@@ -1,5 +1,5 @@
-import 'package:coin_barrel/colors.dart';
 import 'package:coin_barrel/pages/login.dart';
+import 'package:coin_barrel/styles/themes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,12 +14,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      body: SafeArea(
-          child: Center(child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 600),
-        child: LoginForm(),
-      ))),
-      backgroundColor: background,
-    ));
+          body: SafeArea(
+              child: Center(
+                  child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 600),
+            child: LoginForm(),
+          ))),
+          // backgroundColor: MyColors.background,
+        ),
+        theme: mainTheme);
   }
 }
