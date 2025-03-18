@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class MyGap extends StatelessWidget {
-  const MyGap({super.key});
+  final double multiplier;
+
+  const MyGap({super.key, this.multiplier = 1});
 
   @override
   Widget build(BuildContext context) {
-    return const Gap(16);
+    return Gap(16 * multiplier);
   }
 }

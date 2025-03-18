@@ -1,11 +1,11 @@
+import 'package:coin_barrel/widgets/my_content_wrapper.dart';
+import 'package:coin_barrel/widgets/my_step_buttons.dart';
 import 'package:coin_barrel/widgets/my_text_field.dart';
 import 'package:coin_barrel/widgets/my_height.dart';
 import 'package:coin_barrel/widgets/my_gap.dart';
 import 'package:flutter/material.dart';
 
 class LoginForm extends StatefulWidget {
-  static const elementsHeight = 56;
-
   const LoginForm({super.key});
 
   @override
@@ -27,73 +27,41 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      Padding(
-          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
-          child: Stack(
-            children: [
-              Align(
-                  alignment: Alignment.topCenter,
-                  child: Text("Coin Barrel",
-                      style: Theme.of(context).textTheme.displayMedium)),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Welcome back",
-                      style: Theme.of(context).textTheme.headlineMedium),
-                  MyGap(),
-                  MyHeight(
-                      child: MyTextField(
-                    expandsVertically: true,
-                    controller: usernameController,
-                    hintText: "Username",
-                  )),
-                  MyGap(),
-                  MyHeight(
-                    child: MyTextField(
-                      expandsVertically: true,
-                      controller: passwordController,
-                      hintText: "Password",
-                      obscureText: _obscurePassword,
-                      onToggleObscure: () {
-                        setState(() {
-                          _obscurePassword = !_obscurePassword;
-                        });
-                      },
-                      showToggleObscure: true,
-                    ),
-                  ),
-                  MyGap(),
-                  Row(
-                    children: [
-                      MyHeight(
-                          child: AspectRatio(
-                              aspectRatio: 1,
-                              child: IconButton.filledTonal(
-                                icon: const Icon(Icons.arrow_back),
-                                onPressed: () => {},
-                              ))),
-                      MyGap(),
-                      Expanded(
-                          child: MyHeight(
-                        child: FilledButton(
-                          child: Text("Login"),
-                          onPressed: () => {},
-                        ),
-                      ))
-                    ],
-                  )
-                ],
+    return MyContentWrapper(
+        showMascot: true,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text("Coin Barrel",
+                style: Theme.of(context).textTheme.displayMedium),
+            MyGap(multiplier: 2),
+            Text("Welcome back",
+                style: Theme.of(context).textTheme.headlineMedium),
+            MyGap(),
+            MyHeight(
+                child: MyTextField(
+              expandsVertically: true,
+              controller: usernameController,
+              hintText: "Username",
+            )),
+            MyGap(),
+            MyHeight(
+              child: MyTextField(
+                expandsVertically: true,
+                controller: passwordController,
+                hintText: "Password",
+                obscureText: _obscurePassword,
+                onToggleObscure: () {
+                  setState(() {
+                    _obscurePassword = !_obscurePassword;
+                  });
+                },
+                showToggleObscure: true,
               ),
-            ],
-          )),
-      Positioned(
-        right: -25,
-        bottom: -50,
-        height: 225,
-        width: 225,
-        child: Image.asset("assets/barrel.png"),
-      )
-    ]);
+            ),
+            MyGap(),
+            MyStepButtons(primaryText: Text("Login"))
+          ],
+        ));
   }
 }
