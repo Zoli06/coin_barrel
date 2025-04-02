@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'my_gap.dart';
-import 'my_height.dart';
 
 class MyStepButtons extends StatelessWidget {
   final Text primaryText;
@@ -17,22 +15,19 @@ class MyStepButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        MyHeight(
-            child: AspectRatio(
-                aspectRatio: 1,
-                child: IconButton.filledTonal(
-                  icon: const Icon(Icons.arrow_back),
-                  onPressed: onPressBack ?? () => {}
-                ))),
+        AspectRatio(
+            aspectRatio: 1,
+            child: IconButton.filledTonal(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: onPressBack ?? () => {})),
         MyGap(),
         Expanded(
-            child: MyHeight(
-          child: FilledButton(
-            onPressed: onPressPrimary ?? () => {},
-            child: primaryText,
-          ),
-        ))
+            child: FilledButton(
+          onPressed: onPressPrimary ?? () => {},
+          child: primaryText,
+        )),
       ],
     );
   }

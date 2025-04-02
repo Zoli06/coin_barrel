@@ -3,6 +3,7 @@ import 'package:coin_barrel/widgets/my_step_buttons.dart';
 import 'package:coin_barrel/widgets/my_text_field.dart';
 import 'package:coin_barrel/widgets/my_height.dart';
 import 'package:coin_barrel/widgets/my_gap.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class LoginForm extends StatefulWidget {
@@ -32,20 +33,24 @@ class _LoginFormState extends State<LoginForm> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text("Coin Barrel",
+            Text(context.tr('a'),
                 style: Theme.of(context).textTheme.displayMedium),
             MyGap(multiplier: 2),
             Text("Welcome back",
                 style: Theme.of(context).textTheme.headlineMedium),
             MyGap(),
-            MyHeight(
-                child: MyTextField(
-              expandsVertically: true,
-              controller: usernameController,
-              hintText: "Username",
-            )),
+            Flexible(
+                child: MyHeight(
+                    allowGrow: true,
+                    child: MyTextField(
+                      expandsVertically: true,
+                      controller: usernameController,
+                      hintText: "Username",
+                    ))),
             MyGap(),
-            MyHeight(
+            Flexible(
+                child: MyHeight(
+              allowGrow: true,
               child: MyTextField(
                 expandsVertically: true,
                 controller: passwordController,
@@ -58,9 +63,9 @@ class _LoginFormState extends State<LoginForm> {
                 },
                 showToggleObscure: true,
               ),
-            ),
+            )),
             MyGap(),
-            MyStepButtons(primaryText: Text("Login"))
+            MyHeight(child: MyStepButtons(primaryText: Text("Login")))
           ],
         ));
   }

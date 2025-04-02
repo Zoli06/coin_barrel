@@ -37,6 +37,10 @@ dependencies:
   flutter_svg: ^2.0.17
   gap: ^3.0.1
   expandable_page_view: ^1.0.17
+  easy_localization: ^3.0.7+1
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
 dev_dependencies:
   flutter_test:
@@ -97,5 +101,6 @@ flutter:
         - asset: assets/PirataOne-Regular.ttf
 
   assets:
-    - assets/eye.svg
     - assets/barrel.png
+
+  generate: true

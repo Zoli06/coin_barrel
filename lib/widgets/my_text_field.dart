@@ -24,8 +24,8 @@ class MyTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-      assert(!expandsVertically || constraints.maxHeight.isFinite,
-          "Can't expand vertically if the max height is infinite");
+      // assert(!expandsVertically || constraints.maxHeight.isFinite,
+      //     "Can't expand vertically if the max height is infinite");
 
       return TextField(
           controller: controller,
@@ -42,10 +42,11 @@ class MyTextField extends StatelessWidget {
             // So stupid, I'm gonna kms
             contentPadding: expandsVertically
                 ? EdgeInsets.symmetric(
-                    vertical: ((constraints.maxHeight -
-                            (TextTheme.of(context).bodyLarge!.fontSize! *
-                                TextTheme.of(context).bodyLarge!.height!)) /
-                        2),
+                    vertical: ((constraints.minHeight -
+                                (TextTheme.of(context).bodyLarge!.fontSize! *
+                                    TextTheme.of(context).bodyLarge!.height!)) /
+                            2 +
+                        4),
                     horizontal: 12)
                 : null,
           ));

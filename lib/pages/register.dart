@@ -34,44 +34,49 @@ class _RegisterFormState extends State<RegisterForm> {
     final List<Widget> pages = [
       Column(children: [
         MyHeight(
+            allowGrow: true,
             child: MyTextField(
-          hintText: "Username",
-          controller: usernameController,
-          expandsVertically: true,
-        )),
+              hintText: "Username",
+              controller: usernameController,
+              expandsVertically: true,
+            )),
         MyGap(),
         MyHeight(
+            allowGrow: true,
             child: MyTextField(
-          hintText: "Password",
-          controller: passwordController,
-          obscureText: _obscurePassword,
-          onToggleObscure: () {
-            setState(() {
-              _obscurePassword = !_obscurePassword;
-            });
-          },
-          showToggleObscure: true,
-          expandsVertically: true,
-        )),
+              hintText: "Password",
+              controller: passwordController,
+              obscureText: _obscurePassword,
+              onToggleObscure: () {
+                setState(() {
+                  _obscurePassword = !_obscurePassword;
+                });
+              },
+              showToggleObscure: true,
+              expandsVertically: true,
+            )),
       ]),
       Column(children: [
         MyHeight(
+            allowGrow: true,
             child: MyTextField(
-          hintText: "Email",
-          expandsVertically: true,
-        )),
+              hintText: "Email",
+              expandsVertically: true,
+            )),
         MyGap(),
         MyHeight(
+            allowGrow: true,
             child: MyTextField(
-          hintText: "Phone number",
-          expandsVertically: true,
-        )),
+              hintText: "Phone number",
+              expandsVertically: true,
+            )),
         MyGap(),
         MyHeight(
+            allowGrow: true,
             child: MyTextField(
-          hintText: "Address",
-          expandsVertically: true,
-        )),
+              hintText: "Address",
+              expandsVertically: true,
+            )),
       ]),
     ];
 
@@ -97,20 +102,21 @@ class _RegisterFormState extends State<RegisterForm> {
                   },
                   children: pages),
               MyGap(),
-              MyStepButtons(
-                  primaryText: _activePageIndex == pages.length - 1
-                      ? const Text("Register")
-                      : const Text("Next"),
-                  onPressBack: () {
-                    pageViewController.previousPage(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut);
-                  },
-                  onPressPrimary: () {
-                    pageViewController.nextPage(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut);
-                  })
+              MyHeight(
+                  child: MyStepButtons(
+                      primaryText: _activePageIndex == pages.length - 1
+                          ? const Text("Register")
+                          : const Text("Next"),
+                      onPressBack: () {
+                        pageViewController.previousPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut);
+                      },
+                      onPressPrimary: () {
+                        pageViewController.nextPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut);
+                      }))
             ]));
   }
 }
