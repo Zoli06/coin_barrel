@@ -5,7 +5,7 @@ import 'package:coin_barrel/widgets/my_height.dart';
 import 'package:coin_barrel/widgets/my_gap.dart';
 import 'package:flutter/material.dart';
 
-import '../generated/l10n.dart';
+import '../l10n/generated/app_localizations.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -29,8 +29,6 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    S.load(Locale("hu"));
-
     return MyContentWrapper(
         showMascot: true,
         child: Column(

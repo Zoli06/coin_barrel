@@ -6,7 +6,7 @@ import 'package:coin_barrel/widgets/my_gap.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 
-import '../generated/l10n.dart';
+import '../l10n/generated/app_localizations.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});

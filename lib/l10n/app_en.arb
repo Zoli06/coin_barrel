@@ -1,0 +1,39 @@
+{
+  "@@locale": "en",
+
+  "productName": "Coin Barrel",
+  "@productName.description": "The name of the product.",
+
+  "productDescription": "Coin Barrel is a next gen banking app packed with AI features (no, just kidding).",
+  "@productDescription.description": "The description of the product.",
+
+  "loginWelcome": "Welcome back",
+  "@loginWelcome.description": "The welcome message for the login screen.",
+
+  "registerWelcome": "Create an account",
+  "@registerWelcome.description": "The welcome message for the registration screen.",
+
+  "login": "Login",
+  "@login.description": "The login button text.",
+
+  "register": "Register",
+  "@register.description": "The register button text.",
+
+  "username": "Username",
+  "@username.description": "The label for the username field.",
+
+  "email": "Email",
+  "@email.description": "The label for the email field.",
+
+  "password": "Password",
+  "@password.description": "The label for the password field.",
+
+  "phoneNumber": "Phone Number",
+  "@phoneNumber.description": "The label for the phone number field.",
+
+  "address": "Address",
+  "@address.description": "The label for the address field.",
+
+  "next": "Next",
+  "@next.description": "The text for the next button."
+}
