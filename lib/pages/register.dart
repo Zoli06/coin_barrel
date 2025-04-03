@@ -6,6 +6,8 @@ import 'package:coin_barrel/widgets/my_gap.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 
+import '../generated/l10n.dart';
+
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
 
@@ -36,7 +38,7 @@ class _RegisterFormState extends State<RegisterForm> {
         MyHeight(
             allowGrow: true,
             child: MyTextField(
-              hintText: "Username",
+              hintText: S.of(context).username,
               controller: usernameController,
               expandsVertically: true,
             )),
@@ -44,7 +46,7 @@ class _RegisterFormState extends State<RegisterForm> {
         MyHeight(
             allowGrow: true,
             child: MyTextField(
-              hintText: "Password",
+              hintText: S.of(context).password,
               controller: passwordController,
               obscureText: _obscurePassword,
               onToggleObscure: () {
@@ -60,21 +62,21 @@ class _RegisterFormState extends State<RegisterForm> {
         MyHeight(
             allowGrow: true,
             child: MyTextField(
-              hintText: "Email",
+              hintText: S.of(context).email,
               expandsVertically: true,
             )),
         MyGap(),
         MyHeight(
             allowGrow: true,
             child: MyTextField(
-              hintText: "Phone number",
+              hintText: S.of(context).phoneNumber,
               expandsVertically: true,
             )),
         MyGap(),
         MyHeight(
             allowGrow: true,
             child: MyTextField(
-              hintText: "Address",
+              hintText: S.of(context).address,
               expandsVertically: true,
             )),
       ]),
@@ -86,10 +88,10 @@ class _RegisterFormState extends State<RegisterForm> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text("Coin Barrel",
+              Text(S.of(context).productName,
                   style: Theme.of(context).textTheme.displayMedium),
               MyGap(multiplier: 2),
-              Text("Create an account",
+              Text(S.of(context).registerWelcome,
                   style: Theme.of(context).textTheme.headlineMedium),
               MyGap(),
               ExpandablePageView(
@@ -105,8 +107,8 @@ class _RegisterFormState extends State<RegisterForm> {
               MyHeight(
                   child: MyStepButtons(
                       primaryText: _activePageIndex == pages.length - 1
-                          ? const Text("Register")
-                          : const Text("Next"),
+                          ? Text(S.of(context).register)
+                          : Text(S.of(context).next),
                       onPressBack: () {
                         pageViewController.previousPage(
                             duration: const Duration(milliseconds: 300),

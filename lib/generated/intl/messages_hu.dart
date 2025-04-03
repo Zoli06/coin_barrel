@@ -24,15 +24,16 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "address": MessageLookupByLibrary.simpleMessage("Cím"),
     "email": MessageLookupByLibrary.simpleMessage("E-mail"),
-    "loginButton": MessageLookupByLibrary.simpleMessage("Bejelentkezés"),
-    "loginWelcome": MessageLookupByLibrary.simpleMessage("Üdvözöljük újra"),
+    "login": MessageLookupByLibrary.simpleMessage("Bejelentkezés"),
+    "loginWelcome": MessageLookupByLibrary.simpleMessage("Üdv újra"),
+    "next": MessageLookupByLibrary.simpleMessage("Következő"),
     "password": MessageLookupByLibrary.simpleMessage("Jelszó"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Telefonszám"),
     "productDescription": MessageLookupByLibrary.simpleMessage(
       "A Coin Barrel egy új generációs banki alkalmazás, tele mesterséges intelligencia funkciókkal (nem).",
     ),
     "productName": MessageLookupByLibrary.simpleMessage("Coin Barrel"),
-    "registerButton": MessageLookupByLibrary.simpleMessage("Regisztráció"),
+    "register": MessageLookupByLibrary.simpleMessage("Regisztráció"),
     "registerWelcome": MessageLookupByLibrary.simpleMessage(
       "Hozzon létre egy fiókot",
     ),

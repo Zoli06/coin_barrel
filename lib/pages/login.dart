@@ -29,7 +29,7 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    S.load(const Locale("hu", "HU"));
+    S.load(Locale("hu"));
 
     return MyContentWrapper(
         showMascot: true,
@@ -40,7 +40,7 @@ class _LoginFormState extends State<LoginForm> {
               S.of(context).productName,
                 style: Theme.of(context).textTheme.displayMedium),
             MyGap(multiplier: 2),
-            Text(S.of(context).loginButton,
+            Text(S.of(context).loginWelcome,
                 style: Theme.of(context).textTheme.headlineMedium),
             MyGap(),
             Flexible(
@@ -69,7 +69,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
             )),
             MyGap(),
-            MyHeight(child: MyStepButtons(primaryText: Text(S.of(context).loginButton)))
+            MyHeight(child: MyStepButtons(primaryText: Text(S.of(context).login)))
           ],
         ));
   }

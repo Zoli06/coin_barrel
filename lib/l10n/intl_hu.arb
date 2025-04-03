@@ -2,13 +2,14 @@
   "@@locale": "hu",
   "productName": "Coin Barrel",
   "productDescription": "A Coin Barrel egy új generációs banki alkalmazás, tele mesterséges intelligencia funkciókkal (nem).",
-  "loginWelcome": "Üdvözöljük újra",
+  "loginWelcome": "Üdv újra",
   "registerWelcome": "Hozzon létre egy fiókot",
-  "loginButton": "Bejelentkezés",
-  "registerButton": "Regisztráció",
+  "login": "Bejelentkezés",
+  "register": "Regisztráció",
   "username": "Felhasználónév",
   "email": "E-mail",
   "password": "Jelszó",
   "phoneNumber": "Telefonszám",
-  "address": "Cím"
+  "address": "Cím",
+  "next": "Következő"
 }

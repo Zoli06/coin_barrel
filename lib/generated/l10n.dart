@@ -91,13 +91,13 @@ class S {
   }
 
   /// `Login`
-  String get loginButton {
-    return Intl.message('Login', name: 'loginButton', desc: '', args: []);
+  String get login {
+    return Intl.message('Login', name: 'login', desc: '', args: []);
   }
 
   /// `Register`
-  String get registerButton {
-    return Intl.message('Register', name: 'registerButton', desc: '', args: []);
+  String get register {
+    return Intl.message('Register', name: 'register', desc: '', args: []);
   }
 
   /// `Username`
@@ -128,6 +128,11 @@ class S {
   /// `Address`
   String get address {
     return Intl.message('Address', name: 'address', desc: '', args: []);
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message('Next', name: 'next', desc: '', args: []);
   }
 }
 

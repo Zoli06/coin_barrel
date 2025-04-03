@@ -24,15 +24,16 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "address": MessageLookupByLibrary.simpleMessage("Address"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
-    "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
+    "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginWelcome": MessageLookupByLibrary.simpleMessage("Welcome back"),
+    "next": MessageLookupByLibrary.simpleMessage("Next"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "productDescription": MessageLookupByLibrary.simpleMessage(
       "Coin Barrel is a next gen banking app packed with AI features (no, just kidding).",
     ),
     "productName": MessageLookupByLibrary.simpleMessage("Coin Barrel"),
-    "registerButton": MessageLookupByLibrary.simpleMessage("Register"),
+    "register": MessageLookupByLibrary.simpleMessage("Register"),
     "registerWelcome": MessageLookupByLibrary.simpleMessage(
       "Create an account",
     ),
