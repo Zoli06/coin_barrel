@@ -37,7 +37,6 @@ dependencies:
   flutter_svg: ^2.0.17
   gap: ^3.0.1
   expandable_page_view: ^1.0.17
-  easy_localization: ^3.0.7+1
   flutter_localizations:
     sdk: flutter
   intl: any
@@ -103,4 +102,5 @@ flutter:
   assets:
     - assets/barrel.png
 
-  generate: true
+flutter_intl:
+  enabled: true

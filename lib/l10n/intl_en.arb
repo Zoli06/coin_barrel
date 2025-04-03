@@ -1,0 +1,14 @@
+{
+  "@@locale": "en",
+  "productName": "Coin Barrel",
+  "productDescription": "Coin Barrel is a next gen banking app packed with AI features (no, just kidding).",
+  "loginWelcome": "Welcome back",
+  "registerWelcome": "Create an account",
+  "loginButton": "Login",
+  "registerButton": "Register",
+  "username": "Username",
+  "email": "Email",
+  "password": "Password",
+  "phoneNumber": "Phone Number",
+  "address": "Address"
+}
